@@ -50,6 +50,10 @@ func main() {
 
 	r.GET("/querySid", mysql_service.QueryGoUserInfoBySid)
 
-	r.Run()
+	err := r.Run()
+	if err != nil {
+		fmt.Printf("run has error, error: %v", err)
+		return
+	}
 
 }
